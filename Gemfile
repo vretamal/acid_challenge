@@ -47,6 +47,7 @@ group :development, :test do
   # gem which causes rails console to open pry. It therefore depends on pry
   gem 'pry-rails'
   gem 'pry-rescue'
+  gem 'rspec-rails', '~> 3.6'
 end
 
 group :development do
@@ -63,8 +64,11 @@ group :development do
   gem 'bullet'
 end
 
-group :production do
-  gem 'puma', '~> 3.7'
+group :test do
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'faker'
+  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
