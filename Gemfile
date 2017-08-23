@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Simple Rails app configuration
 gem 'figaro'
+# An opinionated framework for creating REST-like APIs in Ruby.
+gem 'grape'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
