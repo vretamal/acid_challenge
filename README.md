@@ -21,13 +21,9 @@ A step by step series of examples that tell you have to get a development env ru
 Say what the step will be
 
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+rake db:create
+rake db:migrate
+rake db:seed
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
