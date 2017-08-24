@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <% if @login %>
+    <h1>Gracias por iniciar sesión</h1>
+    <p>Has iniciado sesión desde <%= @device %></p>
+    <% else %>
+    <h1>Ojo: intentaron iniciar sesión con tu dispositivo</h1>
+    <p>Intentaron iniciar sesión desde <%= @device %></p>
+    <% end %>
+  </body>
+</html>
