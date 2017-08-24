@@ -5,10 +5,10 @@
   </head>
   <body>
   <% if @login %>
-    <h1>Gracias por iniciar sesión</h1>
+    <h1>Gracias por iniciar sesión <%= @user.email %></h1>
     <p>Has iniciado sesión desde <%= @device %></p>
     <% else %>
-    <h1>Ojo: intentaron iniciar sesión con tu dispositivo</h1>
+    <h1>Ojo <%= @user.email %>: intentaron iniciar sesión con tu dispositivo</h1>
     <p>Intentaron iniciar sesión desde <%= @device %></p>
     <% end %>
   </body>

@@ -14,5 +14,15 @@ module AcidChallenge
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    config.action_mailer.smtp_settings = {
+      :user_name => ENV['MAIL_USERNAME'],
+      :password => ENV['MAIL_PASSWORD'],
+      :domain => ENV['MAIL_DOMAIN'],
+      :address => ENV['MAIL_ADDRESS'],
+      :port => ENV['MAIL_PORT'],
+      :authentication => :plain,
+      :enable_starttls_auto => true
+    }
   end
 end
