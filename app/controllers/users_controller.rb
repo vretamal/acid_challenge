@@ -62,7 +62,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def login_form; end
+  def login_form
+    @user = User.new
+  end
 
   def login_form_post
     params = {'image' => Base64.encode64(open(user_params[:image].tempfile.path) { |io| io.read }),
