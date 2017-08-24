@@ -69,7 +69,7 @@ class UsersController < ApplicationController
               'email' => user_params[:email]}
     parsed_uri = URI.parse(request.base_url + '/rest/login/')
     resp = Net::HTTP.post_form(parsed_uri, params)
-    redirect_to root_path, flash: { notice: 'Le llegará un correo electrónico en caso de login exitoso' } and return
+    render root_path
   end
 
   private
