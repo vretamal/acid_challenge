@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @user.image = Base64.encode64(open(user_params[:image].tempfile.path) { |io| io.read })
 
     respond_to do |format|
       if @user.save
@@ -59,6 +60,16 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def login_form; end
+
+  def login_form_post
+    params = {'image' => Base64.encode64(open(user_params[:image].tempfile.path) { |io| io.read }),
+              'email' => user_params[:email]}
+    parsed_uri = URI.parse(request.base_url + '/rest/login/')
+    resp = Net::HTTP.post_form(parsed_uri, params)
+    redirect_to root_path, flash: { notice: 'Le llegará un correo electrónico en caso de login exitoso' } and return
   end
 
   private
