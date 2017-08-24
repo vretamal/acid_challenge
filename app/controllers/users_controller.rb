@@ -68,11 +68,16 @@ class UsersController < ApplicationController
   end
 
   def login_form_post
-    params = {'image' => Base64.encode64(open(user_params[:image].tempfile.path) { |io| io.read }),
-              'email' => user_params[:email]}
-    parsed_uri = URI.parse(request.base_url + '/rest/login/')
-    resp = Net::HTTP.post_form(parsed_uri, params)
-    render root_path
+    begin
+      params = {'image' => Base64.encode64(open(user_params[:image].tempfile.path) { |io| io.read }),
+                'email' => user_params[:email]}
+      parsed_uri = URI.parse(request.base_url + '/rest/login/')
+      resp = Net::HTTP.post_form(parsed_uri, params)
+    rescue => e
+      Rails.logger.debug(e)
+    ensure
+      redirect_to root_path
+    end
   end
 
   private
