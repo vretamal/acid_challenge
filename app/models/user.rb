@@ -10,4 +10,14 @@
 #
 
 class User < ApplicationRecord
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :image, presence: true
+
+  def validate_image(image)
+    if self.image.eql? image
+      true
+    else
+      false
+    end
+  end
 end

@@ -45,10 +45,6 @@ GEM
       rake (>= 10.4, < 13.0)
     arel (8.0.0)
     awesome_print (1.8.0)
-    axiom-types (0.1.1)
-      descendants_tracker (~> 0.0.4)
-      ice_nine (~> 0.11.0)
-      thread_safe (~> 0.3, >= 0.3.1)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -68,8 +64,6 @@ GEM
     childprocess (0.7.1)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.1)
-    coercible (1.0.0)
-      descendants_tracker (~> 0.0.1)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -79,10 +73,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     database_cleaner (1.6.1)
-    descendants_tracker (0.0.4)
-      thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.3)
-    equalizer (0.0.11)
     erubi (1.6.1)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -98,17 +89,7 @@ GEM
       thor (~> 0.14)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    grape (1.0.0)
-      activesupport
-      builder
-      mustermann-grape (~> 1.0.0)
-      rack (>= 1.3.0)
-      rack-accept
-      virtus (>= 1.0.0)
-    grape-rails-routes (1.0)
-      rails (>= 4.1.4)
     i18n (0.8.6)
-    ice_nine (0.11.2)
     interception (0.5)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -129,9 +110,6 @@ GEM
     mini_portile2 (2.2.0)
     minitest (5.10.3)
     multi_json (1.12.1)
-    mustermann (1.0.0)
-    mustermann-grape (1.0.0)
-      mustermann (~> 1.0.0)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
@@ -148,8 +126,6 @@ GEM
     public_suffix (2.0.5)
     puma (3.10.0)
     rack (2.0.3)
-    rack-accept (0.4.5)
-      rack (>= 0.4)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.1.3)
@@ -238,11 +214,6 @@ GEM
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     uniform_notifier (1.10.0)
-    virtus (1.0.5)
-      axiom-types (~> 0.1)
-      coercible (~> 1.0)
-      descendants_tracker (~> 0.0, >= 0.0.3)
-      equalizer (~> 0.0, >= 0.0.9)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -264,8 +235,6 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   faker
   figaro
-  grape
-  grape-rails-routes
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg
@@ -282,6 +251,9 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
+
+RUBY VERSION
+   ruby 2.4.1p111
 
 BUNDLED WITH
    1.15.4

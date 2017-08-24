@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
+ruby '2.4.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
@@ -32,8 +32,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Simple Rails app configuration
 gem 'figaro'
-# An opinionated framework for creating REST-like APIs in Ruby.
-gem 'grape'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
