@@ -6,7 +6,7 @@ class UserNotifierMailer < ApplicationMailer
     @user = user
     @login = login
     @device = device
-    mail(to: @user.email,
+    mail(to: @user.try(:email),
          subject: 'Nuevo inicio de sesión')
   end
 end

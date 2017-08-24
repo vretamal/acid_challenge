@@ -20,10 +20,10 @@ module Rest
     def verify_user
       user = User.where(email: login_params[:email]).first
       if user && user.validate_image(login_params[:image])
-        UserNotifier.send_login_email(user, request.user_agent, true).deliver
+        UserNotifierMailer.send_login_email(user, request.user_agent, true).deliver
         render json: {message: 'OK'}, status: :ok
       else
-        UserNotifier.send_login_email(user, request.user_agent, false).deliver
+        UserNotifierMailer.send_login_email(user, request.user_agent, false).deliver
         render json: {message: 'No Autorizado'}, status: :unauthorized
       end
     end
