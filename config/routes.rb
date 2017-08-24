@@ -13,7 +13,7 @@
 #                 DELETE /users/:id(.:format)               users#destroy
 #      rest_login POST   /rest/login(.:format)              rest/login#login {:format=>:json}
 #            rest POST   /rest/verify_user/:email(.:format) rest/login#verify_user {:format=>:json}
-# 
+#
 
 Rails.application.routes.draw do
   root to: 'users#login_form'

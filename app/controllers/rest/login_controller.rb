@@ -1,5 +1,6 @@
 module Rest
   class LoginController < ApplicationController
+    # WebService 1. It calls WebService 2 and return the response to the user
     def login
       require 'net/http'
       require 'uri'
@@ -17,6 +18,8 @@ module Rest
       end
     end
 
+    # WebService 2. It make the verification of the image and return the
+    # response to the WebService 1. Also send the email to user.
     def verify_user
       user = User.where(email: login_params[:email]).first
       if user && user.validate_image(login_params[:image])

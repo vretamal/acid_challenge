@@ -63,10 +63,12 @@ class UsersController < ApplicationController
     end
   end
 
+  # Set the user to the form.
   def login_form
     @user = User.new
   end
 
+  # Make the magic. It calls to the WebService.
   def login_form_post
     begin
       params = {'image' => Base64.encode64(open(user_params[:image].tempfile.path) { |io| io.read }),

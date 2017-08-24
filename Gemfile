@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Simple Rails app configuration
 gem 'figaro'
 
+# The Levenshtein distance is a metric for measuring the amount of difference between two sequences
+gem 'levenshtein'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

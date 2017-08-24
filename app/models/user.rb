@@ -20,4 +20,23 @@ class User < ApplicationRecord
       false
     end
   end
+
+
+  # Levenshtein method take too long.
+  # require 'levenshtein'
+
+  # def validate_image(image)
+  #   percent = User.distance_percent(self.image, image)
+  #   if percent > 10 || percent == 0
+  #     false
+  #   else
+  #     true
+  #   end
+  # end
+
+  # def self.distance_percent(first, second)
+  #   max_distance = [first, second].max_by(&:length).length
+  #   distance = Levenshtein.distance(first, second)
+  #   (100.0 / max_distance * distance).round
+  # end
 end
