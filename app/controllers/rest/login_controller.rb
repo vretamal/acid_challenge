@@ -4,7 +4,6 @@ module Rest
       require 'net/http'
       require 'uri'
       params = {'image' => login_params[:image]}
-      binding.pry
       parsed_uri = URI.parse(request.base_url + '/rest/verify_user/' +
                              login_params[:email])
 
