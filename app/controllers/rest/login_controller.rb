@@ -5,7 +5,7 @@ module Rest
       require 'uri'
       params = {'image' => login_params[:image]}
       parsed_uri = URI.parse(request.base_url + '/rest/verify_user/' +
-                             login_params[:email]..gsub!(".","%2e"))
+                             login_params[:email].gsub!(".","%2e"))
 
       resp = Net::HTTP.post_form(parsed_uri, params)
       if resp.code.eql? '200'
